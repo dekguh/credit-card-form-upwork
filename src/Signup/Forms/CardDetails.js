@@ -5,6 +5,7 @@ import {
   CardExpiryElement,
   CardNumberElement
 } from "@stripe/react-stripe-js";
+import { devices } from "../../utils/devices";
 
 const MainFormContainer = styled.div`
   width: 100%;
@@ -14,21 +15,24 @@ const MainFormContainer = styled.div`
 const GroupCardContainer = styled.div`
   width: 100%;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   box-sizing: border-box;
 
   @media (max-width: 767.98px) {
     flex-flow: row wrap;
   }
+  @media ${devices.tablet} {
+    flex-flow: row nowrap;
+  }
 `;
 
 const GroupNumber = styled.div`
-  flex: 0 1 50%;
+  flex: 0 1 100%;
   padding: 8px;
   box-sizing: border-box;
 
-  @media (max-width: 767.98px) {
-    flex: 0 1 100%;
+  @media ${devices.tablet} {
+    flex: 0 1 50%;
   }
 `;
 
@@ -37,7 +41,7 @@ const GroupExpired = styled.div`
   padding: 8px;
   box-sizing: border-box;
 
-  @media (max-width: 767.98px) {
+  @media ${devices.tablet} {
     flex: 0 1 50%;
   }
 `;
@@ -47,7 +51,7 @@ const GroupCvv = styled.div`
   padding: 8px;
   box-sizing: border-box;
 
-  @media (max-width: 767.98px) {
+  @media ${devices.tablet} {
     flex: 0 1 50%;
   }
 `;
