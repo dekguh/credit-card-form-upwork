@@ -37,22 +37,22 @@ const GroupNumber = styled.div`
 `;
 
 const GroupExpired = styled.div`
-  flex: 0 1 25%;
+  flex: 0 1 50%;
   padding: 8px;
   box-sizing: border-box;
 
   @media ${devices.tablet} {
-    flex: 0 1 50%;
+    flex: 0 1 25%;
   }
 `;
 
 const GroupCvv = styled.div`
-  flex: 0 1 25%;
+  flex: 0 1 50%;
   padding: 8px;
   box-sizing: border-box;
 
   @media ${devices.tablet} {
-    flex: 0 1 50%;
+    flex: 0 1 25%;
   }
 `;
 
