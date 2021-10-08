@@ -6,6 +6,11 @@ import {
   CardNumberElement
 } from "@stripe/react-stripe-js";
 
+const MainFormContainer = styled.div`
+  width: 100%;
+  font-family: Sans-Serif;
+`;
+
 const GroupCardContainer = styled.div`
   width: 100%;
   display: flex;
@@ -58,10 +63,30 @@ const InputFormWrap = styled.div`
   }
 `;
 
+const LabelCard = styled.label`
+ color: #202020;
+ font-size: 16px;
+ margin-bottom: 8px;
+ display: block;
+`;
+
+const TitleHeading = styled.h5`
+  color: #202020;
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 15px;
+`;
+
 const CardDetails = () => {
   return (
+  <MainFormContainer>
+    <div style={{ padding: 8 }}>
+      <TitleHeading>Card</TitleHeading>
+    </div>
+
     <GroupCardContainer>
       <GroupNumber>
+        <LabelCard>Card number</LabelCard>
         <InputFormWrap>
           <CardNumberElement
             options={{
@@ -78,6 +103,7 @@ const CardDetails = () => {
       </GroupNumber>
 
       <GroupExpired>
+      <LabelCard>Valid thru</LabelCard>
         <InputFormWrap>
           <CardExpiryElement
             options={{
@@ -93,6 +119,7 @@ const CardDetails = () => {
       </GroupExpired>
 
       <GroupCvv>
+      <LabelCard>Secure code</LabelCard>
         <InputFormWrap>
           <CardCvcElement
             options={{
@@ -107,6 +134,7 @@ const CardDetails = () => {
         </InputFormWrap>
       </GroupCvv>
     </GroupCardContainer>
+  </MainFormContainer>
   );
 };
 
